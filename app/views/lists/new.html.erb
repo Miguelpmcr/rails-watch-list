@@ -1,10 +1,13 @@
-<h1>New List</h1>
-<%= form_for @list do |f| %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+
+<div class="container">
+  <h1 class="my-4">New List</h1>
+  <%= form_for @list, class: "form-inline" do |f| %>
+    <div class="form-group">
+      <%= f.label :name, class: "mr-2" %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group mt-2">
+      <%= f.submit "Create List", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

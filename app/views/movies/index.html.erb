@@ -1,0 +1,25 @@
+<!-- app/views/movies/index.html.erb -->
+<h1 class="mb-4">All Movies</h1>
+<div class="container">
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <%= link_to movie_path(movie) do %>
+            <img src="<%= movie.poster_url %>" class="card-img-top" alt="<%= movie.title %> poster">
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= movie.title %>
+            </h5>
+            <p class="card-text"><%= movie.overview %></p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"><strong>Rating:</strong> <%= movie.rating %></small>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

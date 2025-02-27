@@ -1,14 +1,20 @@
-<h1>Add Movie to <%= @list.name %></h1>
-<%= form_for [@list, @bookmark] do |f| %>
-  <div class="field">
-    <%= f.label :movie_id %>
-    <%= f.collection_select :movie_id, Movie.all, :id, :title %>
+<h1 class="mb-4">Add Movie to <%= @list.name %></h1>
+<%= form_for [@list, @bookmark], html: { class: 'form-horizontal' } do |f| %>
+  <div class="form-group">
+    <%= f.label :movie_id, class: "mr-2" %>
+    <div class="form-group">
+      <%= f.collection_select :movie_id, Movie.all, :id, :title, {}, { class: 'form-control' } %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :comment %>
-    <%= f.text_area :comment %>
+  <div class="form-group">
+    <%= f.label :comment, class: 'mr-2' %>
+    <div class="col-sm-50">
+      <%= f.text_area :comment, class: 'form-control' %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-20">
+      <%= f.submit 'Add Bookmark', class: 'btn btn-primary' %>
+    </div>
   </div>
 <% end %>
