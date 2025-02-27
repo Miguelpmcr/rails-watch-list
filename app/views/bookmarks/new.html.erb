@@ -1,0 +1,14 @@
+<h1>Add Movie to <%= @list.name %></h1>
+<%= form_for [@list, @bookmark] do |f| %>
+  <div class="field">
+    <%= f.label :movie_id %>
+    <%= f.collection_select :movie_id, Movie.all, :id, :title %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %>
+    <%= f.text_area :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -68,3 +68,8 @@ gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form"
 gem "sassc-rails" # Uncomment this line if it's commented
+
+group :test do
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
+end
